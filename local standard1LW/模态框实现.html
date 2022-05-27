@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{ margin: 0; padding: 0; }
+        #btn{ text-align: center;}
+        .a1{ display: block; text-decoration: none; 
+        }
+        #back{ width: 100%; height: 100%;
+           background: rgba(0,0,0,.5);   position: fixed;       
+           top: 0; left: 0; z-index: 999; display: none;
+        }
+        #login{  display: none; width: 800px; height: 550px;
+          background-color: #fff; position: fixed; top:50%; left:50%;
+          margin:-300px  -400px; z-index: 1000;
+        } 
+        #close_all{ position: absolute; top:10px;
+          right:10px; width:15px;
+          height:15px; font-size:15px; cursor: pointer;
+        }
+       #login img{width: 50%;height: 100%;}
+      </style>
+</head>
+
+<body>
+    <div id="btn">
+        <a href="javascript:;" rel="external nofollow" class="a1">点击</a>
+      </div>
+      <div id="back"></div>
+      <div id="login">
+          <img src="./img/图片1.png" alt="" style=" margin:0px  200px;">
+        <span id="close_all">×</span>
+      </div>
+
+      <script type="text/javascript">
+        window.onload=function () {
+          var btn=document.getElementById("btn");
+          var back=document.getElementById("back");
+          var login=document.getElementById("login");
+          var close_all=document.getElementById("close_all");
+          btn.onclick=function () {
+            back.style.display="block";
+            login.style.display="block";
+          }
+          close_all.onclick=function () {
+            back.style.display="none";
+            login.style.display="none";
+          }
+        }
+      </script>
+</body>
+</html>

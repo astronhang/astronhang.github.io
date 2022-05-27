@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+            width: 700px;
+            /* border: 1px solid rgb(0, 255, 72); */
+            margin: 0 auto;
+        }
+
+        li {
+            padding: 0 5px;
+            border: 2px solid red;
+            margin-left: 20px;
+            font-weight: bolder;
+            /* margin: 0 auto; */
+        }
+
+        .selectBox {
+            height: 400px;
+            border: 3px solid rgb(0, 0, 0);
+            margin-top: 20px;
+        }
+
+        .content {
+            height: 800px;
+        }
+
+        .selectHead {
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        select {
+            width: 100px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="selectHead">
+        <select name="" id="selectcon" onclick="f1(this.value);">
+            <option value="欧洲">欧洲</option>
+            <option value="亚洲">亚洲</option>
+        </select>
+        <select id="object1" name="select2" onclick="f2(this.value);">
+        </select>
+        <select id="object2" name="select3" onclick="f3(this.value);">
+        </select>
+        <select id="object3" name="select4">
+        </select>
+        <button onclick="selectClick()">确认</button>
+    </div>
+    <div>
+        <ul>
+            <li onclick="jumpClick(0)">北京</li>
+            <li onclick="jumpClick(1)">东京</li>
+            <li onclick="jumpClick(2)">莫斯科</li>
+            <li onclick="jumpClick(3)">香港</li>
+            <li onclick="jumpClick(4)">迪拜</li>
+            <li onclick="jumpClick(5)">基辅</li>
+            <li onclick="jumpClick(6)">伏尔加格勒</li>
+            <li onclick="jumpClick(7)">上海</li>
+
+        </ul>
+    </div>
+    <div>
+        <div class="selectBox">
+            <h1>北京</h1>
+        </div>
+        <div class="selectBox">
+            <h1>东京</h1>
+        </div>
+        <div class="selectBox">
+            <h1>莫斯科</h1>
+        </div>
+        <div class="selectBox">
+            <h1>香港</h1>
+        </div>
+        <div class="selectBox">
+            <h1>迪拜</h1>
+        </div>
+        <div class="selectBox">
+            <h1>基辅</h1>
+        </div>
+        <div class="selectBox">
+            <h1>伏尔加格勒</h1>
+        </div>
+        <div class="selectBox">
+            <h1>上海</h1>
+        </div>
+        <div class="content">
+        </div>
+    </div>
+    
+    <script>
+        var selectBox = document.getElementsByClassName('selectBox')
+        var selectcon = document.getElementById('selectcon')
+
+        // function jumpClick(num) {
+        //     selectBox[num].scrollIntoView({
+        //         behavior: "smooth",
+        //     })
+        // }
+
+        function selectClick() {
+            var object3 = document.getElementById('object3')
+            var index3 = object3.selectedIndex
+            var object2 = document.getElementById('object2')
+            var index2 = object2.selectedIndex
+            var object1 = document.getElementById('object1')
+            var index1 = object1.selectedIndex
+            // console.log('1 = '+object1.options[index1].text);
+            // console.log('2 = '+object2.options[index2].text);
+            // console.log(object3.value);
+            // console.log(selectBox[1].outerText);
+            for(var i = 0; i < selectBox.length; i++){
+                selectBox[i].style.display = 'block'
+            }
+            for(var i = 0; i < selectBox.length; i++){
+                if(object3.options[index3].text != selectBox[i].outerText){
+                    selectBox[i].style.display = 'none'
+                }
+            }
+
+        }
+
+        function f1(v) {
+
+            document.getElementById("object3").options.length = 0
+            document.getElementById("object1").options.length = 0
+            document.getElementById("object2").options.length = 0
+            var s = document.getElementById("object1");
+            if (v == "欧洲") {
+                var option0 = new Option("东欧", "a1");
+                s.options[0] = option0;
+            } else if (v == "亚洲") {
+                var option0 = new Option("东亚", "b1");
+                var option1 = new Option("西亚", "b2");
+                s.options[0] = option0;
+                s.options[1] = option1;
+                s.options[1].selected = true;
+
+            }
+        }
+
+        function f2(v) {
+            console.log(v);
+            document.getElementById("object2").options.length = 0
+            document.getElementById("object3").options.length = 0
+            var s = document.getElementById("object2");
+            if (v == "a1") {
+                var option0 = new Option("俄罗斯", "a1");
+                var option1 = new Option("乌克兰", "a2");
+                s.options[0] = option0;
+                s.options[1] = option1;
+            } else if (v == "b1") {
+                var option0 = new Option("中国", "b1");
+                var option1 = new Option("日本", "b2");
+                s.options[0] = option0;
+                s.options[1] = option1;
+            } else if (v == "b2") {
+                var option0 = new Option("阿联酋", "c1");
+                s.options[0] = option0;
+            }
+        }
+
+        function f3(v) {
+            document.getElementById("object3").options.length = 0
+            var s = document.getElementById("object3");
+            if (v == "a1") {
+                var option0 = new Option("莫斯科", "a1");
+                var option1 = new Option("伏尔加格勒", "a2");
+                s.options[0] = option0;
+                s.options[1] = option1;
+            } else if (v == "a2") {
+                var option0 = new Option("基辅", "b1");
+                s.options[0] = option0;
+            } else if (v == "b1") {
+                var option0 = new Option("北京", "b1");
+                var option1 = new Option("香港", "b1");
+                var option2 = new Option("上海", "b1");
+
+                s.options[0] = option0;
+                s.options[1] = option1;
+                s.options[2] = option2;
+            } else if (v == "b2") {
+                var option0 = new Option("东京", "b2");
+                s.options[0] = option0;
+            } else if (v == "c1") {
+                var option0 = new Option("迪拜", "c1");
+                s.options[0] = option0;
+            }
+        }
+    </script>
+</body>
+
+</html>

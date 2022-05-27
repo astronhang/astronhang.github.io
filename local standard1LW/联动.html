@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.selectBox {
+            height: 400px;
+            border: 3px solid rgb(0, 0, 0);
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="" class="selProvince" id="selectcon">
+        <option value="">----请选择----</option>
+    </select>
+    <select name="" class="selCity" id="object1">
+        <option value="">----请选择----</option>
+    </select>
+    <select name="" class="selCountry" id="object2">
+        <option value="">----请选择----</option>
+    </select>
+    <select name="" class="selqu" id="object3">
+        <option value="">----请选择----</option>
+    </select>
+    <button onclick="selectClick()">确定</button>
+    <div>
+        <div class="selectBox">
+            <h1>武汉1-1</h1>
+        </div>
+        <div class="selectBox">
+            <h1>武汉1-2</h1>
+        </div>
+        <div class="selectBox">
+            <h1>武汉2-1</h1>
+        </div>
+        <div class="selectBox">
+            <h1>武汉2-2</h1>
+        </div>
+        <div class="selectBox">
+            <h1>黄冈1-1</h1>
+        </div>
+        <div class="selectBox">
+            <h1>黄冈1-2</h1>
+        </div>
+        <div class="selectBox">
+            <h1>黄冈2-1</h1>
+        </div>
+        <div class="selectBox">
+            <h1>黄冈2-2</h1>
+        </div>
+
+        <div class="content">
+        </div>
+    </div>
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        var iNum1;
+        var iNum2;
+        var iNum3;
+        var aProvince = ['湖北'];
+        var aCity = [
+            ['武汉', '黄冈']
+        ];
+        var aCountry = [
+            [
+                ['武汉1', '武汉2'],
+                ['黄冈1', '黄冈2'],
+            ]
+        ];
+        var aqu = [
+            [
+                [
+                    ['武汉1-1', '武汉1-2'],
+                    ['武汉2-1', '武汉2-2']
+                ],
+                [
+                    ['黄冈1-1', '黄冈1-2'],
+                    ['黄冈2-1', '黄冈2-2']
+                ]
+            ]
+        ];
+
+
+        $(function () {
+            for (var i = 0; i < aProvince.length; i++) {
+                $('.selProvince').append('<option>' + aProvince[i] + '</option>');
+            }; //遍历第一层
+            $('.selProvince').change(function () {
+                $('.selCity').children().not(':eq(0)').remove();
+                $('.selCountry').children().not(':eq(0)').remove();
+                iNum1 = $(this).children('option:selected').index();
+                var aaCity = aCity[iNum1 - 1];
+                for (var j = 0; j < aaCity.length; j++) {
+                    $('.selCity').append('<option>' + aaCity[j] + '</option>');
+                }
+            });
+            $('.selCity').change(function () {
+                $('.selCountry').children().not(':eq(0)').remove();
+                iNum2 = $(this).children('option:selected').index();
+                var aaCountry = aCountry[iNum1 - 1][iNum2 - 1];
+                for (var k = 0; k < aaCountry.length; k++) {
+                    $('.selCountry').append('<option>' + aaCountry[k] + '</option>');
+                }
+            })
+            $('.selCountry').change(function () {
+                $('.selqu').children().not(':eq()0').remove();
+                iNum3 = $(this).children('option:selected').index();
+                var aaqu = aqu[iNum1 - 1][iNum2 - 1][iNum3 - 1];
+                for (var l = 0; l < aaqu.length; l++) {
+                    $('.selqu').append('<option>' + aaqu[l] + '</option>');
+                }
+            })
+        })
+        var selectBox = document.getElementsByClassName('selectBox')
+        function selectClick(){
+            var object3 = document.getElementById('object3')
+            var index3 = object3.selectedIndex
+            var object2 = document.getElementById('object2')
+            var index2 = object2.selectedIndex
+            var object1 = document.getElementById('object1')
+            var index1 = object1.selectedIndex
+            // console.log('1 = '+object1.options[index1].text);
+            // console.log('2 = '+object2.options[index2].text);
+            console.log(object3.value);
+            console.log(selectBox[1].outerText);
+            for(var i = 0; i < selectBox.length; i++){
+                selectBox[i].style.display = 'block'
+            }
+            for(var i = 0; i < selectBox.length; i++){
+                if(object3.options[index3].text != selectBox[i].outerText){
+                    selectBox[i].style.display = 'none'
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

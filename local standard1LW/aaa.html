@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local standard</title>
+    <link rel="stylesheet" href="./css/aaa.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="aa">
+            <img src="./img/logo@2x.png" alt="">
+        </div>
+    </div>
+
+    <div class="shang">
+        <div class="a" >
+            <div class="selectHead">
+                <select name="" id="selectcon" onclick="f1(this.value);">
+                    <option value="G.CHINA">G.CHINA</option>
+                    <option value="KOREA">KOREA</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Japan">Japan</option>
+                    <option value="SWA">SWA</option>
+                    <option value="CIS">CIS</option>
+                    <option value="LATAM">LATAM</option>
+                    <option value="NA">NA</option>
+                </select>
+                <select id="object1" name="select2" onclick="f2(this.value);">
+                </select>
+                <select id="object2" name="select3" onclick="f3(this.value);">
+                </select>
+                <select id="object3" name="select4">
+                </select>
+                <button  onclick="selectClick()">确定</button>
+            </div>
+            <!-- <div>
+                <ul class="xt">
+                    <li onclick="jumpClick(0)">北京</li>
+                    <li onclick="jumpClick(1)">东京</li>
+                    <li onclick="jumpClick(2)">莫斯科</li>
+                    <li onclick="jumpClick(3)">香港</li>
+                    <li onclick="jumpClick(4)">迪拜</li>
+                    <li onclick="jumpClick(5)">基辅</li>
+                    <li onclick="jumpClick(6)">伏尔加格勒</li>
+                    <li onclick="jumpClick(7)">上海</li>
+        
+                </ul>
+            </div> -->
+            <!-- <div>
+                <ul class="xt">
+                    <li onclick="jumpClick(0)">选项1</li>
+                    <li onclick="jumpClick(1)">选项2</li>
+                    <li onclick="jumpClick(2)">选项3</li>
+                    <li onclick="jumpClick(3)">选项4</li>
+                    <li onclick="jumpClick(4)">选项5</li>
+                    <li onclick="jumpClick(5)">选项6</li>
+                    <li onclick="jumpClick(6)">选项7</li>
+
+
+                </ul>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="box" >
+        <div class="test" >
+            <div class="selectBox">
+                <h1>北京</h1>
+                <div class="select_1">
+               <div class="lan_s">
+                   <div class="lan_s_1">
+                      <p>10</p>
+                   </div>
+                   <div class="lan_s_2">
+                     <p>
+                        这是一段对10分页面的打分标准 这是一段对10分页面的打分标准 这是一段对10分页面的打
+                        分标准 这是一段对10分页面的打分标准 这是一段对10分页面的打分标准 这是一段对10分
+                        页面的打分标准 这是一段对10分页面的打分标准 这是一段对10分页面的打分标准
+                     </p>
+                   </div>
+               </div>
+               <div class="lan_x"   >
+                 <div class="lan_x_1">
+                     <img src="./img/tu.png" alt="">
+                     <h1>特殊情况页面1</h1>
+                     <p>特殊情况页面描述 特殊情况页面描述 特殊情况页面描述 特殊情况页面描述</p>
+                     <button class="btn"  style="margin-top: 30px;display: block; text-decoration: none;" >查看大图</button>
+                     <div class="back"></div>
+                     <div class="login">
+                         <img src="./img/图片1.png" alt="" style=" margin:0px  200px;">
+                       <span class="close_all" >×</span>
+                     </div>
+                 </div>
+                 <div class="lan_x_1" >
+                    <img src="./img/tu.png" alt="">
+                    <h1>特殊情况页面2</h1>
+                    <p>特殊情况页面描述 特殊情况页面描述 特殊情况页面描述 特殊情况页面描述</p>
+                    <button class="btn"  style="margin-top: 30px;display: block; text-decoration: none;" >查看大图</button>
+                     <div class="back"></div>
+                     <div class="login">
+                         <img src="./img/图片1.png" alt="" style=" margin:0px  200px;">
+                       <span class="close_all">×</span>
+                     </div>
+                </div>
+                <div class="lan_x_1" >
+                    <img src="./img/tu.png" alt="">
+                    <h1>特殊情况页面3</h1>
+                    <p>特殊情况页面描述 特殊情况页面描述 特殊情况页面描述 特殊情况页面描述</p>
+                    <button class="lan_x_btn"  style="margin-top: 30px;">查看大图</button>
+                </div>
+                <div class="lan_x_1" >
+                    <img src="./img/tu.png" alt="">
+                    <h1>特殊情况页面4</h1>
+                    <p>特殊情况页面描述 特殊情况页面描述 特殊情况页面描述 特殊情况页面描述</p>
+                    <button class="lan_x_btn" style="margin-top: 30px;">查看大图</button>
+                </div>
+        
+               </div>
+                </div>
+            </div>
+
+
+            
+            <div class="selectBox">
+                <h1>MTN_sa</h1>
+                <div class="select_1">
+    
+                </div>
+            </div>
+            <div class="selectBox">
+                <h1>Vodacom_sa</h1>
+                <div class="select_1">
+    
+                </div>
+            </div>
+            <div class="selectBox">
+                <h1>AU_japan</h1>
+                <div class="select_1">
+    
+                </div>
+            </div>
+            <div class="selectBox">
+                <h1>NTT docomo_japan</h1>
+                <div class="select_1">
+    
+                </div>
+            </div>
+            <div class="selectBox">
+                <h1>China Mobile_hk</h1>
+                <div class="select_1">
+    
+                </div>
+            </div><div class="selectBox">
+                <h1>Fortress_hk</h1>
+                <div class="select_1">
+    
+                </div>
+            </div><div class="selectBox">
+                <h1>HKT_hk</h1>
+                <div class="select_1">
+    
+                </div>
+            </div><div class="selectBox">
+                <h1>JD_CN</h1>
+                <div class="select_1">
+    
+                </div>
+            </div><div class="selectBox">
+                <h1>Shopee (Yinda)_TW</h1>
+                <div class="select_1">
+    
+                </div>
+            </div><div class="selectBox">
+                <h1>Suning_CN</h1>
+                <div class="select_1">
+    
+                </div>
+            </div><div class="selectBox">
+                <h1>Tmall_CN</h1>
+                <div class="select_1">
+    
+                </div>
+            </div>
+        <div class="selectBox">
+            <h1>Coupang_Korea</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Amazon_IN</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Flipkart_IN</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Alser_Kazakhstan</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Mechta_Kazakhstan</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Sulpak_Kazakhstan</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Technodom_Kazakhstan</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Beeline_Russia</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>DNS_Russia</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>M.Video_Russia</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Megafon_Russia</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>MTS_Russia</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Svyaznoy_Russia</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Wildberries_Russia</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Falabella_Chile</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Paris_Chile</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Ripley_Chile</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Americanas (B2W Companhia Digital)_BR</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Casasbahia (Via Varejo)_BR</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Extra (Via Varejo)_BR</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Fast Shop_BR</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Magazine Luiza_BR</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Pontofrio (Via Varejo)_BR</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Amazon_USA</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>AT&T_USA</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Best Buy_USA</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>T-mobile_USA</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>US Cellular_USA</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Verizon_USA</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Xfinity (Comcast)_USA</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Spectrum (Charter)_USA</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Bell_Canada</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Best Buy_Canada</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>Rogers Wireless_Canada</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+        <div class="selectBox">
+            <h1>TELUS_Canada</h1>
+            <div class="select_1">
+
+            </div>
+        </div>
+     
+
+
+
+
+
+            <div class="content">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/search.js"></script>
+      <script src="./js/big.js"></script>
+        
+      </script>
+</body>
+
+</html>
